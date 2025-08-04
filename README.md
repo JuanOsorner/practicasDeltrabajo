@@ -30,3 +30,7 @@ Usuario: tu nombre de usuario de GitHub
 
 Contraseña: el token (no tu contraseña real)
 
+🦾Borrar todo el historial (más drástico)
+Si no te importa perder todo el historial del terminal:
+
+        > ~/.bash_history
