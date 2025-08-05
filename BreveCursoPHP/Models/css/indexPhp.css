@@ -16,7 +16,7 @@ body {
     font-family: var(--font-stack);
     margin: 0;
     padding: 0;
-    background-color: var(--gray-light);
+    background-color: #e6e7e7;
     color: var(--text-color-dark);
 }
 
@@ -24,7 +24,7 @@ body {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background-color: var(--white);
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -108,7 +108,7 @@ body {
 
 .acta-title {
     text-align: center;
-    color: var(--dark-blue);
+    color: #6A1B9A;
     margin: 20px 0;
     font-size: 1.8rem;
     border-bottom: 2px solid var(--gray-medium);
@@ -123,7 +123,7 @@ body {
 }
 
 .panel-header {
-    background-color: var(--dark-blue);
+    background-color: #6A1B9A;
     color: var(--white);
     padding: 10px 15px;
     margin: -20px -20px 20px -20px;
@@ -148,7 +148,7 @@ body {
 
 .form-field label {
     font-weight: bold;
-    color: var(--dark-blue);
+    color: #6A1B9A;
     margin-bottom: 5px;
 }
 
@@ -170,7 +170,7 @@ body {
 }
 
 .disclaimer-text h3 {
-    color: var(--dark-blue);
+    color: purple;
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -203,7 +203,7 @@ body {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--dark-blue);
+    color: purple;
 }
 
 .signatures-grid {
@@ -225,7 +225,7 @@ body {
 .signature-label {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--dark-blue);
+    color: purple;
 }
 
 .signature-image {
@@ -246,6 +246,53 @@ body {
     width: 250px;
     height: 1px;
     background-color: #000;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="button"] {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-family: var(--font-stack);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(106, 27, 154, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: var(--dark-blue);
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.12);
+}
+
+.form-panel button,
+.form-panel .button,
+.form-panel input[type="submit"],
+.form-panel input[type="button"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*JS*/
+.userNameTag {
+    display: inline-block;
+    padding: 8px 18px;
+    color: #FF9800;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin: 8px 0;
 }
 
 /*RESPONSIVE*/

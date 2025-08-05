@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Models/img/jolifoodslogo.png" type="image/png">
     <title>Descargo de Responsabilidad - Ingreso a Datacenter</title>
     <link rel="stylesheet" href="../Models/css/indexPhp.css">
 </head>
@@ -34,63 +35,63 @@
                 <div class="form-field">
                     <label>
                         Nombre:
-                        <input type="text" class="input-field">
+                        <input id="name" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($nombre); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Tipo de Documento:
-                        <input type="text" class="input-field">
+                        <input id="kindDocument" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($tipo_documento); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Tipo de Usuario:
-                        <input type="text" class="input-field">
+                        <input id="kindUser" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($tipo_usuario); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Correo Electrónico:
-                        <input type="text" class="input-field">
+                        <input id="Email" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($correo); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         No. de Documento:
-                        <input type="text" class="input-field">
+                        <input id="documentNumber" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($numero_documento); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Empresa:
-                        <input type="text" class="input-field">
+                        <input id="company" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($empresa); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Nombre del Rack:
-                        <input type="text" class="input-field">
+                        <input id="ranckName" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($nombre_rack); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Actividad:
-                        <input type="text" class="input-field">
+                        <input id="Activity" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($actividad); ?></p>
                 </div>
                 <div class="form-field">
                     <label>
                         Fecha:
-                        <input type="text" class="input-field">
+                        <input id="date" type="text" class="input-field">
                     </label>
                     <p><?php echo htmlspecialchars($fecha); ?></p>
                 </div>
@@ -103,6 +104,7 @@
                     <p><?php echo htmlspecialchars($observacion); ?></p>
                 </div>
             </div>
+            <button id="saveButton">Guardar información</button>
         </section>
 
         <section class="disclaimer-text">
@@ -155,11 +157,12 @@
                 <?php endif; ?>
                 <div class="signature-block name-signature">
                     <span class="signature-line-span"></span>
-                    <p class="signature-label"><b>Nombre visitante: <p id="userName"></p></b></p>
+                    <p class="signature-label"><b>Nombre visitante:<p id="userName"></p></b></p>
                     <p class="js-signature-name"><?php echo htmlspecialchars($nombre); ?></p>
                 </div>
             </div>
         </section>
     </main>
+    <script src="../Crontollers/js/Dinamics.js"></script>
 </body>
 </html>
