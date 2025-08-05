@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargo de Responsabilidad - Ingreso a Datacenter</title>
+    <link rel="stylesheet" href="../Models/css/indexPhp.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="../Models/img/jolifoodslogo.png" alt="Jolifoods Logo" class="logo">
+        </div>
+        <div class="header-title">
+            <h1 class="document-title">Descargo de Responsabilidad</h1>
+            <p>Ingreso a Datacenter</p>
+        </div>
+        <div class="header-meta">
+            <strong>Código</strong><br>
+            <strong>Edición</strong><br>
+            <strong>Vigencia</strong>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="acta-title">Acta No. <?php echo htmlspecialchars($valorid); ?></h2>
+
+        <section class="form-panel">
+            <div class="panel-header">
+                <h3>Datos del Visitante</h3>
+            </div>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label>
+                        Nombre:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($nombre); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Tipo de Documento:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($tipo_documento); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Tipo de Usuario:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($tipo_usuario); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Correo Electrónico:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($correo); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        No. de Documento:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($numero_documento); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Empresa:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($empresa); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Nombre del Rack:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($nombre_rack); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Actividad:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($actividad); ?></p>
+                </div>
+                <div class="form-field">
+                    <label>
+                        Fecha:
+                        <input type="text" class="input-field">
+                    </label>
+                    <p><?php echo htmlspecialchars($fecha); ?></p>
+                </div>
+                <div class="form-field full-width">
+                    <label>
+                        Observación:
+                        <!--NAME IS FOR PHP AND ID FOR JS-->
+                        <textarea name="message" id="message" class="textArea"></textarea>
+                    </label>
+                    <p><?php echo htmlspecialchars($observacion); ?></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="disclaimer-text">
+            <h3>DESCARGO DE RESPONSABILIDAD</h3>
+            <p>El presente documento tiene como objeto establecer las condiciones bajo las cuales se autoriza el ingreso al Datacenter de <strong>Jolifoods SAS</strong>. Al firmar este documento, el visitante o contratista (en adelante, "el visitante") acepta los términos y condiciones aquí descritos y exime de toda responsabilidad a <strong>Jolifoods SAS</strong> por cualquier daño, pérdida o perjuicio que pueda surgir durante su permanencia en el Datacenter.</p>
+        
+            <h4>1. OBJETO DEL DOCUMENTO</h4>
+            <p>El presente documento tiene como objeto establecer las condiciones bajo las cuales se autoriza el ingreso al Datacenter de <strong>Jolifoods SAS</strong>. Al firmar este documento, el visitante o contratista (en adelante, "el visitante") acepta los términos y condiciones aquí descritos y exime de toda responsabilidad a <strong>Jolifoods SAS</strong> por cualquier daño, pérdida o perjuicio que pueda surgir durante su permanencia en el Datacenter.</p>
+        
+            <h4>2. DECLARACIONES</h4>
+            <p>2.1 El visitante declara que ha sido informado sobre las normas de seguridad, procedimientos de emergencia y las condiciones bajo las cuales se permite el acceso al Datacenter.</p>
+            <p>2.2 El visitante reconoce que el Datacenter contiene infraestructura crítica para el funcionamiento de <strong>Jolifoods SAS</strong> y que cualquier daño o alteración puede tener consecuencias graves para la empresa y sus clientes.</p>
+            <p>2.3 El visitante asegura que no realizará ninguna acción que pueda comprometer la seguridad, integridad o funcionamiento de los equipos, sistemas y datos alojados en el Datacenter.</p>
+        
+            <h4>3. NORMAS DE ACCESO Y PERMANENCIA</h4>
+            <p>3.1 El acceso al Datacenter estará restringido a las áreas específicas para las cuales se ha otorgado autorización previa.</p>
+            <p>3.2 El visitante debe estar acompañado en todo momento por personal autorizado de <strong>Jolifoods SAS</strong> durante su permanencia en el Datacenter.</p>
+            <p>3.3 Está estrictamente prohibido:</p>
+            <ul>
+                <li>Utilizar dispositivos electrónicos no autorizados dentro del Datacenter.</li>
+                <li>Tomar fotografías o videos sin autorización previa y por escrito.</li>
+                <li>Alterar, mover o desconectar cualquier equipo sin la debida autorización.</li>
+                <li>Ingresar con alimentos, bebidas o cualquier sustancia que pueda representar un riesgo para los equipos y sistemas.</li>
+            </ul>
+        
+            <h4>4. RESPONSABILIDAD</h4>
+            <p>4.1 <strong>Jolifoods SAS</strong> no se hace responsable por ningún daño o pérdida que pueda sufrir el visitante durante su ingreso o permanencia en el Datacenter, salvo en los casos en que se pueda demostrar negligencia grave o dolo por parte de <strong>Jolifoods SAS</strong>.</p>
+            <p>4.2 El visitante asume total responsabilidad por cualquier daño que cause a los equipos, sistemas o instalaciones del Datacenter, ya sea por acción directa, negligencia o incumplimiento de las normas de seguridad.</p>
+            <p>4.3 En caso de que el visitante cause un daño que resulte en interrupción del servicio o afecte a terceros, el visitante se compromete a indemnizar a <strong>Jolifoods SAS</strong> por los costos, pérdidas y perjuicios derivados.</p>
+        
+            <h4>5. CONFIDENCIALIDAD</h4>
+            <p>5.1 El visitante se compromete a mantener la confidencialidad sobre cualquier información a la que tenga acceso durante su estancia en el Datacenter. Esto incluye, pero no se limita a, información técnica, operativa, financiera o de clientes.</p>
+            <p>5.2 Esta obligación de confidencialidad subsistirá aún después de la finalización del acceso al Datacenter y no se verá afectada por la terminación de la relación laboral, contractual o cualquier otra relación que tenga con <strong>Jolifoods SAS</strong>.</p>
+        
+            <h4>6. TERMINACIÓN DEL ACCESO</h4>
+            <p><strong>Jolifoods SAS</strong> se reserva el derecho de revocar el acceso al Datacenter en cualquier momento, sin previo aviso, si considera que el visitante ha violado las condiciones aquí establecidas o si existe cualquier otra razón que justifique dicha revocación.</p>
+        
+            <h4>7. ACEPTACIÓN</h4>
+            <p>Al firmar el presente documento, el visitante reconoce haber leído, comprendido y aceptado todos los términos y condiciones aquí establecidos.</p>
+        </section>
+
+        <section class="signatures-panel">
+            <p class="signatures-title">Firmado en aceptación:</p>
+            <div class="signatures-grid">
+                <?php if (!empty($firma)) : ?>
+                    <div class="signature-block">
+                        <p class="signature-label"><strong>Firma:</strong></p>
+                        <img src="<?php echo htmlspecialchars($firma); ?>" width="250" class="js-signature-img signature-image" alt="Firma">
+                    </div>
+                <?php endif; ?>
+                <div class="signature-block name-signature">
+                    <span class="signature-line-span"></span>
+                    <p class="signature-label"><b>Nombre visitante: <p id="userName"></p></b></p>
+                    <p class="js-signature-name"><?php echo htmlspecialchars($nombre); ?></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
