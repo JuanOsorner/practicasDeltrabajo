@@ -295,6 +295,55 @@ input[type="button"]:hover {
     margin: 8px 0;
 }
 
+/*MODAL*/
+.modal {   
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it appears above other elements */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h3 {
+    color: var(--purple);
+    margin-bottom: 20px;
+}
+
+.modal-content .input-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal-content .button {
+    background-color: var(--purple);
+    color: var(--yellow);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-content .button:hover {
+    background-color: var(--yellow);
+    color: var(--purple);
+}
+
 /*RESPONSIVE*/
 @media (max-width: 768px) {
     .main-header {
