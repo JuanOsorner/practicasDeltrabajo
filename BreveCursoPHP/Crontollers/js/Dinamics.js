@@ -1,11 +1,11 @@
 // I want to add a modal to show a error if the user dont put a name
 // Now we have a modal, so the next step is hide it or show it
-const modal = document.getElementById('nameModal');
 // Im creating a dyynamic bettween html and js
 const saveButton = document.getElementById('saveButton');
 saveButton.addEventListener('click',()=>{
     if(document.getElementById('name').value === "") {
         //alert("Probando");
+        const modal = document.getElementById('nameModal');
         modal.style.display = 'flex';
         return;
     }else{
