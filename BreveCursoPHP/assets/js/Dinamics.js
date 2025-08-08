@@ -2,12 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalContainer = document.getElementById("modalConteiner");
     const saveButton = document.getElementById("saveButton");
     async function loadModal() {
-        // We need to fetch the modal HTML content
-        const response = await fetch("../Views/modals.html");
-        // We take the text of the response 
-        const html = await response.text();
-         // Insert the HTML into the modal container
-         modalContainer.innerHTML = html;
+        try{
+            // We need to fetch the modal HTML content
+            const response = await fetch("../Views/modals.html");
+            // We take the text of the response 
+            const html = await response.text();
+            // Insert the HTML into the modal container
+            modalContainer.innerHTML = html;
+            // Call the function to show the modal
+            showModal();
+        }catch(error){
+            console.error("Error loading modal:", error);
+        }
     }
     function showModal(){
         const modal = document.getElementById("nameModal");
@@ -21,29 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.style.display = "none"; // Hide the modal
         });
     }
+    // Load the modal when the page is ready
+    loadModal();
 });
 /*
-Lets star again whit the code. I want to try modular of the code.
-
-1. Lets start with the DOM of all our website. 
-
-- Remember that we star writing document.addEventListener("DOMContentLoaded", () => {...
-  cause we need to load the DOM before we start to manipulate it.
-
-- Remember that a promise is when we are waitng for something to finish before 
-  we continue with the code.
-
-- examples: asyc, await, fetch, text.
-
-- asyc makes a fuction asynchronous, meaning it will return a promise.
-
-- await is used to wait for a promise to resolve before continuing with the code.
-
-- fetch is used to make a request to a server and return a promise.
-
-- text is used to convert a response to text.
-
-- There exist other DOM objet like: target, currentTarget, event, etc.
-
-- target is the element that triggered the event.
 */
