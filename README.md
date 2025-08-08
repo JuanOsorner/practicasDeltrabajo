@@ -1,36 +1,18 @@
-# This is a repository just to work things
+# 😎 Work's practices 
 
-## TOKEN: (Expires on Wed, Sep 3 2025) 
+## 🦾 Tips to JS
 
-    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
+1. Remember that is so important when you are working whit DOM write in the .js this: 
 
-🔒 NO tienes permisos de escritura (ni lectura, si es privado) en el repositorio remoto.
+        document.addEventListener("DOMcontentLoaded" ()=>{//HERE THE DOM CODE});
 
-✅ POSIBLES CAUSAS Y SOLUCIONES
-🚫 1. Repositorio privado y no estás autenticado
-Si el repositorio es privado, necesitas autenticarte con un token personal o SSH.
+this is to load all of DOM. There exist other DOM objet like: target, currentTarget, event, etc.
 
-✅ SOLUCIÓN: usar token (HTTPS)
-Si ya tienes un token de acceso personal (PAT), debes clonar o hacer pull así:
+💥target is the element that triggered the event.
 
-        git remote set-url origin https://<TU_TOKEN>@github.com/JuanOsorner/practicasDeltrabajo.git
+2. Remember that a promies is when you're waiting for a response. There exist a lot exambles: 
 
-⚠️ ¡Sensible! Si haces esto en consola, el token queda guardado en texto plano en el historial.
-
-✅ Recomendado: Guardar el token en Git Credential Manager
-Ejecuta:
-
-        git config --global credential.helper manager-core
-
-Luego haz git pull origin main.
-
-Git te pedirá:
-
-Usuario: tu nombre de usuario de GitHub
-
-Contraseña: el token (no tu contraseña real)
-
-🦾Borrar todo el historial (más drástico)
-Si no te importa perder todo el historial del terminal:
-
-        > ~/.bash_history
+💥 asyc: makes a fuction asynchronous, meaning it will return a promise.
+💥 await: is used to wait for a promise to resolve before continuing with the code. 
+💥 fetch: is used to make a request to a server and return a promise.
+💥 text: is used to convert a response to text.
