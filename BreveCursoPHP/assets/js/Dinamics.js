@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const modalContainer = document.getElementById("modalConteiner");
     const saveButton = document.getElementById("saveButton");
+    async function loadModal() {
+        // We need to fetch the modal HTML content
+        const response = await fetch("../Views/modals.html");
+        // We take the text of the response 
+        const html = await response.text();
+         // Insert the HTML into the modal container
+         modalContainer.innerHTML = html;
+    }
     function showModal(){
         const modal = document.getElementById("nameModal");
         const closeModalButton = document.getElementById("closeModalButton");
