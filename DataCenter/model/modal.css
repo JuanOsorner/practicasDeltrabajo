@@ -1,0 +1,43 @@
+/* modals.css - Estilos para modales coherentes con la paleta y glassmorphism */
+
+:root{
+  --modal-backdrop: rgba(11,18,32,0.36);
+  --modal-bg: rgba(255,255,255,0.96);
+  --modal-border: rgba(11,18,32,0.06);
+  --modal-radius: 14px;
+}
+
+/* Backdrop (pantalla detrás del modal) */
+.modal-backdrop {
+  position:fixed;
+  inset:0;
+  background: var(--modal-backdrop);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+/* Contenedor del modal */
+.modal {
+  width:clamp(320px, 60vw, 720px);
+  background: linear-gradient(180deg, var(--modal-bg), rgba(255,255,255,0.94));
+  border-radius: var(--modal-radius);
+  border: 1px solid var(--modal-border);
+  box-shadow: 0 30px 80px rgba(11,18,32,0.14);
+  padding:20px;
+  backdrop-filter: blur(8px);
+  color: var(--text-dark);
+}
+
+/* Header del modal */
+.modal h3 { margin:0 0 8px 0; color: var(--purple); font-weight:800; }
+
+/* Contenido del modal */
+.modal .modal-body { margin-bottom:12px; color: rgba(11,18,32,0.82); }
+
+/* Footer con botones */
+.modal .modal-footer { display:flex; gap:10px; justify-content:flex-end; }
+.modal .btn { padding:8px 14px; border-radius:10px; font-weight:700; }
+.modal .btn.primary { background: linear-gradient(90deg, var(--purple), var(--yellow)); color:#fff; }
+.modal .btn.ghost { background:transparent; border:1px solid rgba(11,18,32,0.06); color:var(--text-dark); }

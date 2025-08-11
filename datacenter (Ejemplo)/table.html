@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargo de Responsabilidad - Ingreso a Datacenter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .header, .content {
+            margin-bottom: 20px;
+        }
+        .table-container {
+            width: 100%;
+            margin: 20px auto;
+        }
+        .table-container div {
+            display: inline-block;
+            width: 32%;
+            box-sizing: border-box;
+            vertical-align: top;
+            padding: 5px;
+        }
+        .table-container div:nth-child(3n) {
+            margin-right: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .signatures {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .signature-line {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .signature-line span {
+            border-top: 1px solid #000;
+            display: inline-block;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="table-container" style="font-size: 10px; width: 100%;">
+        <table style="width: 100%; border-collapse: collapse; text-align: center;">
+            <tr>
+                <!-- Imagen centrada -->
+                <td style="vertical-align: middle; text-align: center; width: 20%;">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEDdMh-3SX52Q/company-logo_200_200/company-logo_200_200/0/1631374215338/jolifoods_logo?e=2147483647&v=beta&t=EZjP7jHZojIaeb7aTE9Ytm6CMHkt1PsAzJTq4GJNoKk" alt="Jolifoods Logo" >
+                </td>
+                <!-- Título centrado -->
+                <td style="vertical-align: middle; text-align: center; width: 60%;">
+                    <div class="section-title" style="font-weight: bold; font-size: 20px;">DESCARGO DE RESPONSABILIDAD</div>
+                </td>
+                <!-- Texto centrado -->
+                <td style="vertical-align: middle; text-align: center; width: 20%; font-size: 14px;">
+                    <strong>Código</strong><br>
+                    <strong>Edición</strong><br>
+                    <strong>Vigencia</strong>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <center><h1>Acta No.'.$valorid.'</h1></center>
+
+    <div class="section">
+        <div class="section-title">Datos del Visitante</div>
+    </div>
+
+    <div class="table-container" style="font-size: 14px; width: 100%;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="vertical-align: top;"><strong>Nombre:</strong></td>
+                <td style="vertical-align: top;"><strong>Tipo de Documento:</strong></td>
+                <td style="vertical-align: top;"><strong>Tipo de Usuario:</strong></td> 
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">' . htmlspecialchars($nombre) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($tipo_documento) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($tipo_usuario) . '</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Correo Electrónico:</strong></td>
+                <td style="vertical-align: top;"><strong>No. de Documento:</strong></td>
+                <td style="vertical-align: top;"><strong>Empresa:</strong></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">' . htmlspecialchars($correo) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($numero_documento) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($empresa) . '</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Nombre del Rack:</strong></td>
+                <td style="vertical-align: top;"><strong>Actividad:</strong></td>
+                <td style="vertical-align: top;"><strong>Fecha:</strong></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">' . htmlspecialchars($nombre_rack) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($actividad) . '</td>
+                <td style="vertical-align: top;">' . htmlspecialchars($fecha) . '</td>
+            </tr>
+            <tr>
+                <td colspan="6" style="vertical-align: top;"><strong>Observación:</strong></td>
+            </tr>
+            <tr>
+                <td colspan="6" style="vertical-align: top;">' . htmlspecialchars($observacion) . '</td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <div class="section">
+        <div class="section-title" style="text-align: center; font-weight: bold;">DESCARGO DE RESPONSABILIDAD</div>
+        <p style="text-align: left;">El presente documento tiene como objeto establecer las condiciones bajo las cuales se autoriza el ingreso al Datacenter de <strong>Jolifoods SAS</strong>. 
+        Al firmar este documento, el visitante o contratista (en adelante, "el visitante") acepta los términos y condiciones aquí descritos y exime de toda responsabilidad a 
+        <strong>Jolifoods SAS</strong> por cualquier daño, pérdida o perjuicio que pueda surgir durante su permanencia en el Datacenter.</p>
+    
+        <p style="text-align: center; font-weight: bold;">1. OBJETO DEL DOCUMENTO</p>
+        <p style="text-align: left;">El presente documento tiene como objeto establecer las condiciones bajo las cuales se autoriza el ingreso al Datacenter de <strong>Jolifoods SAS</strong>. 
+        Al firmar este documento, el visitante o contratista (en adelante, "el visitante") acepta los términos y condiciones aquí descritos y exime de toda responsabilidad a 
+        <strong>Jolifoods SAS</strong> por cualquier daño, pérdida o perjuicio que pueda surgir durante su permanencia en el Datacenter.</p>
+    
+        <p style="text-align: center; font-weight: bold;">2. DECLARACIONES</p>
+        <p style="text-align: left;">2.1 El visitante declara que ha sido informado sobre las normas de seguridad, procedimientos de emergencia y las condiciones bajo las cuales se permite el acceso al Datacenter.</p>
+        <p style="text-align: left;">2.2 El visitante reconoce que el Datacenter contiene infraestructura crítica para el funcionamiento de <strong>Jolifoods SAS</strong> y que cualquier daño o alteración puede tener consecuencias graves para la empresa y sus clientes.</p>
+        <p style="text-align: left;">2.3 El visitante asegura que no realizará ninguna acción que pueda comprometer la seguridad, integridad o funcionamiento de los equipos, sistemas y datos alojados en el Datacenter.</p>
+    
+        <p style="text-align: center; font-weight: bold;">3. NORMAS DE ACCESO Y PERMANENCIA</p>
+        <p style="text-align: left;">3.1 El acceso al Datacenter estará restringido a las áreas específicas para las cuales se ha otorgado autorización previa.</p>
+        <p style="text-align: left;">3.2 El visitante debe estar acompañado en todo momento por personal autorizado de <strong>Jolifoods SAS</strong> durante su permanencia en el Datacenter.</p>
+        <p style="text-align: left;">3.3 Está estrictamente prohibido:</p>
+        <ul style="text-align: left;">
+            <li>Utilizar dispositivos electrónicos no autorizados dentro del Datacenter.</li>
+            <li>Tomar fotografías o videos sin autorización previa y por escrito.</li>
+            <li>Alterar, mover o desconectar cualquier equipo sin la debida autorización.</li>
+            <li>Ingresar con alimentos, bebidas o cualquier sustancia que pueda representar un riesgo para los equipos y sistemas.</li>
+        </ul>
+    
+        <p style="text-align: center; font-weight: bold;">4. RESPONSABILIDAD</p>
+        <p style="text-align: left;">4.1 <strong>Jolifoods SAS</strong> no se hace responsable por ningún daño o pérdida que pueda sufrir el visitante durante su ingreso o permanencia en el Datacenter, salvo en los casos en que se pueda demostrar negligencia grave o dolo por parte de <strong>Jolifoods SAS</strong>.</p>
+        <p style="text-align: left;">4.2 El visitante asume total responsabilidad por cualquier daño que cause a los equipos, sistemas o instalaciones del Datacenter, ya sea por acción directa, negligencia o incumplimiento de las normas de seguridad.</p>
+        <p style="text-align: left;">4.3 En caso de que el visitante cause un daño que resulte en interrupción del servicio o afecte a terceros, el visitante se compromete a indemnizar a <strong>Jolifoods SAS</strong> por los costos, pérdidas y perjuicios derivados.</p>
+    
+        <p style="text-align: center; font-weight: bold;">5. CONFIDENCIALIDAD</p>
+        <p style="text-align: left;">5.1 El visitante se compromete a mantener la confidencialidad sobre cualquier información a la que tenga acceso durante su estancia en el Datacenter. Esto incluye, pero no se limita a, información técnica, operativa, financiera o de clientes.</p>
+        <p style="text-align: left;">5.2 Esta obligación de confidencialidad subsistirá aún después de la finalización del acceso al Datacenter y no se verá afectada por la terminación de la relación laboral, contractual o cualquier otra relación que tenga con <strong>Jolifoods SAS</strong>.</p>
+    
+        <p style="text-align: center; font-weight: bold;">6. TERMINACIÓN DEL ACCESO</p>
+        <p style="text-align: left;"><strong>Jolifoods SAS</strong> se reserva el derecho de revocar el acceso al Datacenter en cualquier momento, sin previo aviso, si considera que el visitante ha violado las condiciones aquí establecidas o si existe cualquier otra razón que justifique dicha revocación.</p>
+    
+        <p style="text-align: center; font-weight: bold;">7. ACEPTACIÓN</p>
+        <p style="text-align: left;">Al firmar el presente documento, el visitante reconoce haber leído, comprendido y aceptado todos los términos y condiciones aquí establecidos.</p>
+    </div>
+    
+    
+    
+
+    <div class="signatures">
+        <p>Firmado en aceptación:</p>
+
+        ' . (!empty($firma) ? '
+        <div class="signature">
+            <p><strong>Firma:</strong></p>
+            <img src="' . htmlspecialchars($firma) . '" width="250" />
+        </div>' : '') . '
+        <div class="signature-line" style="margin-top: 25px;">
+            
+            <span></span>
+            <br>
+            <b>Nombre visitante:</b>
+            <br>
+            '. $nombre .'
+        </div>
+    </div>
+</body>
+</html>';
