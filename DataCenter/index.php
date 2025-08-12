@@ -5,7 +5,8 @@ $nombre = $nombre ?? '';
 $empresa = $empresa ?? '';
 $identificacion = $identificacion ?? '';
 $placa = $placa ?? '';
-$motivo = $motivo ?? '';
+$tipoDocumento = $tipoDocumento ?? '';
+$ARL = $ARL ?? '';
 $fecha = $fecha ?? date('Y-m-d');
 $hora = $hora ?? date('H:i');
 ?>
@@ -18,23 +19,13 @@ $hora = $hora ?? date('H:i');
     <title>Acceso Datacenter - Jolifoods SAS</title>
     <meta name="description" content="Registro y descargo de responsabilidad de ingreso al datacenter de Jolifoods SAS" />
     <link rel="stylesheet" href="model/index.css">
-    <link rel="stylesheet" href="model/modal.css"> <!-- estilos para futuros modales -->
 </head>
 
 <body>
-    <!-- Fondo de olas (SVG) -->
-    <div id="wave-bg" aria-hidden="true">
-        <svg viewBox="0 0 2560 800" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <path class="wave wave-1" d="M0,160 C640,260 1280,60 2560,160 L2560,800 L0,800 Z" />
-            <path class="wave wave-2" d="M0,260 C640,160 1280,360 2560,260 L2560,800 L0,800 Z" />
-            <path class="wave wave-3" d="M0,200 C640,120 1280,300 2560,200 L2560,800 L0,800 Z" />
-            <path class="wave wave-4" d="M0,320 C640,220 1280,420 2560,320 L2560,800 L0,800 Z" />
-        </svg>
-    </div>
 
     <!-- MENÚ VERTICAL -->
     <nav id="side-nav" aria-label="Navegación principal">
-        <div class="nav-top">
+        <div class="nav-top" style="display: flex; align-items: center; gap: 10px;">
             <img src="model/src/logoJolifoods.png" alt="Logo Jolifoods" class="nav-logo">
             <h1 class="nav-brand">Jolifoods</h1>
         </div>
@@ -47,7 +38,6 @@ $hora = $hora ?? date('H:i');
         </ul>
 
         <div class="nav-bottom">
-            <a class="nav-link small" href="#login">Iniciar sesión</a>
             <small class="nav-copy">© <?php echo date('Y'); ?> Jolifoods SAS</small>
         </div>
     </nav>
@@ -57,7 +47,7 @@ $hora = $hora ?? date('H:i');
         <div class="center-wrap">
             <main id="main-content" role="main" aria-labelledby="welcome-title">
                 <div class="welcome-wrap">
-                    <h2 id="welcome-title" class="welcome-title">Bienvenido al Data Center de Jolifoods</h2>
+                    <h2 id="welcome-title" class="welcome-title">Data Center Jolifoods</h2>
                 </div>
 
                 <section class="form-card" aria-label="Formulario de registro de acceso">
@@ -76,34 +66,42 @@ $hora = $hora ?? date('H:i');
 
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="nombre">Nombre completo</label> <br> <hr> <br>
+                                    <label for="nombre">Nombre de quien ingresa</label> <br> <hr> <br>
                                     <input type="text" id="nombre" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="empresa">Empresa / Dependencia</label> <br> <hr> <br>
+                                    <label for="empresa">Autorizado por</label> <br> <hr> <br>
                                     <input type="text" id="empresa" name="empresa" value="<?php echo htmlspecialchars($empresa); ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="identificacion">Tipo y número de identificación</label> <br> <hr> <br>
-                                    <input type="text" id="identificacion" name="identificacion" value="<?php echo htmlspecialchars($identificacion); ?>">
+                                    <table class="tabla-identificacion">
+                                        <tr>
+                                            <td style="padding:0; border:none; width:1%; vertical-align:middle;">
+                                                <select id="motivo" name="motivo" class="select-documento">
+                                                    <option value=""></option>
+                                                    <option value="CC" <?php echo ($tipoDocumento === 'CEDULA') ? 'selected' : ''; ?>>CC</option>
+                                                    <option value="TI" <?php echo ($tipoDocumento === 'TARJETA IDENTIDAD') ? 'selected' : ''; ?>>TI</option>
+                                                    <option value="PP" <?php echo ($tipoDocumento === 'PASAPORTE') ? 'selected' : ''; ?>>PP</option>
+                                                </select>
+                                            </td>
+                                            <td style="padding:0 0 0 8px; border:none; vertical-align:middle; width:99%;">
+                                                <input type="number" id="identificacion" name="identificacion" value="<?php echo htmlspecialchars($identificacion); ?>">
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="placa">Placa vehículo (si aplica)</label> <br> <hr> <br>
+                                    <label for="placa">Empresa</label> <br> <hr> <br>
                                     <input type="text" id="placa" name="placa" value="<?php echo htmlspecialchars($placa); ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="motivo">Motivo de la visita</label> <br> <hr> <br>
-                                    <select id="motivo" name="motivo">
-                                        <option value="">Seleccione</option>
-                                        <option value="mantenimiento" <?php echo ($motivo === 'mantenimiento') ? 'selected' : ''; ?>>Mantenimiento</option>
-                                        <option value="soporte" <?php echo ($motivo === 'soporte') ? 'selected' : ''; ?>>Soporte técnico</option>
-                                        <option value="inspeccion" <?php echo ($motivo === 'inspeccion') ? 'selected' : ''; ?>>Inspección</option>
-                                        <option value="otro" <?php echo ($motivo === 'otro') ? 'selected' : ''; ?>>Otro</option>
-                                    </select>
+                                    <label for="motivo">ARL</label> <br> <hr> <br>
+                                    <input type="text" id="ARL" name="ARL" value = "<?php echo htmlspecialchars($ARL); ?>">
                                 </div>
 
                                 <div class="form-group">
@@ -112,7 +110,11 @@ $hora = $hora ?? date('H:i');
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="hora">Hora</label> <br> <hr> <br>
+                                    <label for="hora">Hora de entrada</label> <br> <hr> <br>
+                                    <input type="time" id="hora" name="hora" value="<?php echo htmlspecialchars($hora); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora">Hora de salida</label> <br> <hr> <br>
                                     <input type="time" id="hora" name="hora" value="<?php echo htmlspecialchars($hora); ?>">
                                 </div>
                             </div>
