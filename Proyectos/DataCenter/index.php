@@ -1,5 +1,5 @@
 <?php
-// index.php - Formulario / Descargo (menú vertical morado)
+header('Content-Type: text/html; charset=UTF-8');
 $valorid = $valorid ?? '';
 $nombre = $nombre ?? '';
 $empresa = $empresa ?? '';
@@ -54,7 +54,7 @@ $hora = $hora ?? date('H:i');
                     <form id="access-form" action="process_access.php" method="post" novalidate>
                         <input type="hidden" name="valorid" id="valorid" value="<?php echo htmlspecialchars($valorid); ?>">
 
-                        <div class="form-container">
+                        <div id="formConteiner" class="form-container">
                             <div class="disclaimer">
                                 <h3>Descargo de responsabilidad - Ingreso al Datacenter</h3>
                                 <p>
@@ -125,7 +125,7 @@ $hora = $hora ?? date('H:i');
                                     <canvas id="signature-pad" width="600" height="160" aria-label="Área para firma"></canvas>
                                 </div>
                                 <div class="signature-controls">
-                                    <button type="button" id="add-signature" class="btn btn-entry">Añadir firma</button>
+                                    <button type="button" id="addsignature" class="btn btn-entry">Añadir firma</button>
                                     <button type="button" id="clear-signature" class="btn btn-exit">Borrar firma</button>
                                     <input type="hidden" name="signature" id="signature-data" value="">
                                 </div>
@@ -143,6 +143,8 @@ $hora = $hora ?? date('H:i');
             </main>
         </div>
     </div>
+    <!--Aqui vamos a cargar todo el contenido HTML-->
+    <div id="contendorMensajes"></div>
     <!--Vamos a realizar -->
     <script src="controller/js/controller1.js"></script>
 </body>

@@ -446,3 +446,95 @@ input[type="number"] {
         flex-direction: column;
     }
 }
+
+/* ===== ESTILOS PARA MENSAJE DE ERROR - #mensajeError1 ===== */
+#mensajeError1 {
+  /* Posicionamiento y visibilidad */
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  opacity: 0;
+  z-index: 3000;
+  
+  /* Tipografía y texto */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--white-alpha);
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  
+  /* Dimensiones y espaciado */
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 5vw, 40px);
+  min-width: 280px;
+  max-width: 90vw;
+  border-radius: 12px;
+  
+  /* Fondo con degradado animado */
+  background: linear-gradient(135deg, 
+    var(--purple-dark) 0%, 
+    var(--purple-main) 35%, 
+    var(--yellow-accent) 100%);
+  background-size: 200% 200%;
+  
+  /* Efectos visuales */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  
+  /* Transiciones para animación de entrada/salida */
+  transition: 
+    opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Estado visible con animación */
+#mensajeError1.visible {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  
+  /* Animación del degradado */
+  animation: gradientAnimation 3.5s ease infinite;
+}
+
+/* Animación para el degradado de fondo */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 
+      0 6px 24px rgba(106, 27, 154, 0.4),
+      0 0 12px rgba(255, 193, 7, 0.25);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Estado de error persistente */
+#mensajeError1.visible.persistent {
+  animation: 
+    gradientAnimation 3.5s ease infinite,
+    pulseAnimation 1.5s ease infinite alternate;
+}
+
+/* Animación adicional para estado persistente */
+@keyframes pulseAnimation {
+  to {
+    transform: translateX(-50%) scale(1.03);
+  }
+}
+
+/* Mejoras de accesibilidad para lectores de pantalla */
+#mensajeError1[aria-live] {
+  will-change: transform, opacity;
+}
