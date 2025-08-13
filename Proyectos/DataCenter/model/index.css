@@ -296,10 +296,15 @@ body {
 }
 
 .signature-pad-wrap {
-    border: 2px dashed var(--purple-light);
+    background: linear-gradient(135deg, rgba(106,27,154,0.12) 0%, rgba(255,193,7,0.10) 100%);
     border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 15px;
+    border: 2px dashed var(--purple-light);
+    box-shadow: 0 2px 8px rgba(60,16,83,0.08);
+    padding: 8px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 320px;
+    margin-bottom: 12px;
 }
 
 #signature-pad {
@@ -329,22 +334,48 @@ body {
     background-size: 200% auto;
 }
 
-.btn-entry {
-    background-image: linear-gradient(to right, var(--purple-main) 0%, var(--purple-light) 51%, var(--purple-main) 100%);
+/* Botones morados estáticos y animación suave al pasar el mouse */
+.btn-entry, .btn-exit, .btn-img {
+    background: var(--purple-main);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    margin: 0 8px 0 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(60,16,83,0.08);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.btn-entry:hover {
-    background-position: right center;
-    transform: scale(1.05);
+.btn-entry:hover, .btn-exit:hover, .btn-img:hover {
+    background: #7c3aed;
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(60,16,83,0.15);
 }
-
-.btn-exit {
-    background-image: linear-gradient(to right, var(--orange-accent) 0%, #ff8a65 51%, var(--orange-accent) 100%);
+.btn-img {
+    gap: 10px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 320px;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    font-size: 1rem;
 }
-
-.btn-exit:hover {
-    background-position: right center;
-    transform: scale(1.05);
+.btn-img img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 /* --- Checkbox --- */
@@ -537,4 +568,54 @@ input[type="number"] {
 .toast-hide {
     /* Usamos la misma animación de salida que definiste, que ya es la inversa de la entrada. */
     animation: slide-out-right 0.5s ease-in-out forwards;
+}
+
+/* Estilo para el cuadro de texto motivo encima de la firma */
+#cuadroTexto {
+    width: 100%;
+    min-width: 600px;
+    max-width: 100%;
+    height: 160px;
+    box-sizing: border-box;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px dashed var(--purple-light);
+    border-radius: 10px;
+    color: var(--white-alpha);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    resize: none;
+    outline: none;
+}
+#cuadroTexto:focus {
+    border-color: var(--yellow-accent);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+}
+
+/* Ubicación uniforme y simétrica de los cuadros de firma */
+.signature-duo {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+.signature-block {
+    flex: 1 1 0;
+    max-width: 620px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+}
+.signature-block label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--white-alpha);
+    text-align: center;
 }

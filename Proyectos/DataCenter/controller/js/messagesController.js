@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     mensajeError.style.display = 'none';
                 }, 500000); // 500ms es la duración de la animación
-            }, 10000);
+            }, 5000);
         }
     }
 
