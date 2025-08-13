@@ -154,7 +154,7 @@ $hora = $hora ?? date('H:i');
                                     </div>
                                 </div>
                                 <div style="display: flex; justify-content: center; margin-top: 24px;">
-                                    <button type="button" id="addsignature" class="btn btn-entry">Completar formulario</button>
+                                    <button type="button" id="addsignature" class="btn btn-entry">Finalizar formulario</button>
                                 </div>
                             </div>
 
@@ -172,8 +172,9 @@ $hora = $hora ?? date('H:i');
     </div>
     <!--Aqui vamos a cargar todo el contenido HTML-->
     <div id="contendorMensajes"></div>
-    <!--Vamos a realizar -->
-    <script type="module" src="controller/js/controller1.js"></script>
+    <!--SCRIPTS-->
+    <script type="module" src="controller/js/menssageController.js"></script>
     <script type="module" src="controller/js/canvasController.js"></script>
+    <script type="module" src="controller/js/main.js"></script>
 </body>
 </html>
