@@ -117,17 +117,44 @@ $hora = $hora ?? date('H:i');
                                     <label for="hora">Hora de salida</label> <br> <hr> <br>
                                     <input type="time" id="hora" name="hora" value="<?php echo htmlspecialchars($hora); ?>">
                                 </div>
+                                <div class="form-group">
+                                    <label for="hora">Añadir evidencia</label> <br> <hr> <br>
+                                    <button type="button" id="añadirEvidencia" class="btn btn-img">
+                                        añadir evidencia
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="signature-section">
-                                <label for="signature-pad">Firma (toque o dibuje):</label>
-                                <div class="signature-pad-wrap">
-                                    <canvas id="signature-pad" width="600" height="160" aria-label="Área para firma"></canvas>
+                                <!-- Cuadro de texto Motivo encima de la firma -->
+                                <div class="motivo-section">
+                                    <label for="motivo-firma" style="font-weight:600; font-size:0.9rem; margin-bottom:8px; display:inline-block;">Motivo</label>
+                                    <textarea name="cuadroTexto" id="cuadroTexto" rows="5" cols="40"></textarea>
                                 </div>
-                                <div class="signature-controls">
-                                    <button type="button" id="addsignature" class="btn btn-entry">Añadir firma</button>
-                                    <button type="button" id="clear-signature" class="btn btn-exit">Borrar firma</button>
-                                    <input type="hidden" name="signature" id="signature-data" value="">
+                                <div class="signature-duo" style="display: flex; gap: 24px; justify-content: center;">
+                                    <div class="signature-block">
+                                        <label for="signature-pad-usuario">Firma de usuario:</label>
+                                        <div class="signature-pad-wrap">
+                                            <canvas id="signature-pad-usuario" width="600" height="160" aria-label="Área para firma de usuario"></canvas>
+                                        </div>
+                                        <div class="signature-controls">
+                                            <button type="button" id="clear-signature-usuario" class="btn btn-exit">Borrar firma usuario</button>
+                                            <input type="hidden" name="signature-usuario" id="signature-data-usuario" value="">
+                                        </div>
+                                    </div>
+                                    <div class="signature-block">
+                                        <label for="signature-pad-responsable">Firma de responsable:</label>
+                                        <div class="signature-pad-wrap">
+                                            <canvas id="signature-pad-responsable" width="600" height="160" aria-label="Área para firma de responsable"></canvas>
+                                        </div>
+                                        <div class="signature-controls">
+                                            <button type="button" id="clear-signature-responsable" class="btn btn-exit">Borrar firma responsable</button>
+                                            <input type="hidden" name="signature-responsable" id="signature-data-responsable" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: center; margin-top: 24px;">
+                                    <button type="button" id="addsignature" class="btn btn-entry">Completar formulario</button>
                                 </div>
                             </div>
 
@@ -146,6 +173,7 @@ $hora = $hora ?? date('H:i');
     <!--Aqui vamos a cargar todo el contenido HTML-->
     <div id="contendorMensajes"></div>
     <!--Vamos a realizar -->
-    <script src="controller/js/controller1.js"></script>
+    <script type="module" src="controller/js/controller1.js"></script>
+    <script type="module" src="controller/js/canvasController.js"></script>
 </body>
 </html>
