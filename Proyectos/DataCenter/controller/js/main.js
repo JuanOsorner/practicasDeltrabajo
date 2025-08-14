@@ -1,14 +1,16 @@
 import { menssageController } from './menssageController.js';
 import { canvasController } from './canvasController.js';
+import { botones } from './botones.js';
 document.addEventListener('DOMContentLoaded', () => {
     //Aqui vamos a colocar toda la logica del negocio
-    /*Mensajes de error */
 
+    /*--------(MODULO MENSAJES DE ERROR)--------------*/
     /*Cargar contenido DOM */
     const addSignatureBtn = document.getElementById('addsignature');
     const contenedorMensajes = document.getElementById('contendorMensajes');
     const inputs = document.querySelectorAll('#formConteiner input:not([type="hidden"])');
     const selectDocumento = document.getElementById('motivo');
+    //NECESITO AJUSTAR ALGO AQUI
     addSignatureBtn.addEventListener('click', (e) => {
         e.preventDefault();
         let hayVacio = false;
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hayVacio = true;
         }
         if (hayVacio) {
-            menssageController.mostrarToast(document.getElementById('mensajeError1'));
+            menssageController.mostrarToast(document.getElementById('mensajeError'));
         } else {
             // Aquí puedes agregar la lógica para manejar el caso cuando todos los campos están completos
             console.log('Todos los campos están completos.');
@@ -31,18 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Cargar el contenido HTML del toast al iniciar
     menssageController.cargarContenidoHTML(contenedorMensajes);
+    /*---------------------------------*/
     
-    /*-------------------*/
-
+    /*--------(MODULO CANVAS)-----------*/
     /*Canvas*/
-    // Aquí puedes agregar la lógica específica del canvasController si es necesario
     const canvas = document.getElementById('signature-pad-usuario');
     const ctx = canvas.getContext('2d');
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
-    ctx.strokeStyle = '#000000';
+    ctx.strokeStyle = '#ffffffff';
+    /*Canvas1*/
+    const canvas1 = document.getElementById('signature-pad-responsable');
+    const ctx1 = canvas1.getContext('2d');
+    ctx1.lineWidth = 2;
+    ctx1.lineCap = 'round';
+    ctx1.strokeStyle = '#ffffffff';
 
-    // Eventos para el ratón
+    // Eventos para el ratón canvas: usamos e.
     canvas.addEventListener('mousedown', (e) => {
         canvasController.empezarDibujo(e, canvas, ctx);
     });
@@ -65,5 +72,36 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('touchend', () => {
         canvasController.terminarDibujo();
     });
-    //AQUI ES DONDE HACEMOS USO DE LAS e PARA LOS EVENTOS DEL CANVAS
+
+    // Eventos para el ratón canvas1: usamos e.
+    canvas1.addEventListener('mousedown', (e) => {
+        canvasController.empezarDibujo(e, canvas1, ctx1);
+    });
+    canvas1.addEventListener('mousemove', (e) => {
+        canvasController.dibujar(e, canvas1, ctx1);
+    });
+    canvas1.addEventListener('mouseup', () => {
+        canvasController.terminarDibujo();
+    });
+
+    // Eventos para pantallas táctiles canvas1
+    canvas1.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        canvasController.empezarDibujo(e, canvas1, ctx1);
+    });
+    canvas1.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        canvasController.dibujar(e, canvas1, ctx1);
+    });
+    canvas1.addEventListener('touchend', () => {
+        canvasController.terminarDibujo();
+    });
+
+    /*Botones para borrar y guardar firma*/
+
+    /*Canvas*/
+    botones.dinamicaBotonBorrarFirma(canvas,ctx,'clear-signature-usuario');
+    /*Canvas1*/
+    botones.dinamicaBotonBorrarFirma(canvas1,ctx1,'clear-signature-responsable');
+    /*-------------------------*/
 });
