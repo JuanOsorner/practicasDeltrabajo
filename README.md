@@ -75,7 +75,7 @@ write:
 
               const rect = canvas.getBoundingClientRect();
 
-  
+
 
 ### 🟠 Figures 
 
@@ -110,6 +110,25 @@ write:
                 canvas.toDataURL("image/png"); // retrun the image in Base64
                 canvas.toDataURL("image/jpeg", 0.8); // JPEG 80%
 
+### ---> 🔥The next example code is using to redraw our draw and save it🔥
+
+                //4. Función para redibujar las coordenadas guardadas
+                static redibujar(ctx) {
+                        ctx.beginPath();
+                        //Recorremos las coordenadas guardadas
+                        this.trazos.forEach(trazo => {
+                            //Nos movemos a la primera posición del trazo
+                            ctx.moveTo(trazo[0].x, trazo[0].y);
+                            //Recorremos cada punto del trazo
+                                trazo.forEach(punto => {
+                                //Creamos una linea hasta cada punto
+                                ctx.lineTo(punto.x, punto.y);
+                                });
+                        });
+                        //Dibujamos el trazo
+                        ctx.stroke();
+                    }
+
 ## 🟣 To remain: 
 
 beginPath() → Starts a new stroke.
@@ -124,5 +143,32 @@ closePath() → Closes the current stroke.
 
 toDataURL() → Converts the drawing to a Base64 image.
 
+fill() →  The browser fills the area bounded by that path, using the color or style defined in:
+
+### ☀️Tip: use this only when you define the area. 
+
+
+### Example:
+                ctx.beginPath();
+                ctx.arc(50, 50, 20, 0, Math.PI * 2); // A circle
+
+### Then write 
+
+                ctx.fill()
+
 getBoundingClientRect() → This return the position and sides of the canvas in the window (viewport). This is using to translate coordenates from the event
 to relative Canvas coordenates 
+
+# ERROR MESSAGES ❌ 
+
+If you want to create a profesional error messages you should try: 
+
+                try{
+                        //(TRY THIS AND IF EXIST A PROBLEM CATCH A ERROR)
+                        if(condition){
+                                thorw new Error("Error description");
+                        }
+                        LOGIC
+                }catch(error){
+                        console.log("ERROR",error)
+                }
